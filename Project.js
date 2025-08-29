@@ -13,9 +13,13 @@ const deposit = () => {
     // program will ask this question in the terminal:
     const depositAmount = prompt("Enter a deposit amount: "); 
     
-    // Example of what happens in terminal:
-    // > node bank.js
-    // Enter a deposit amount: 500   <-- (user types 500 and presses Enter)
+    // to change string to int
+    const numberDepositAmount = parseFloat(depositAmount);
+
+    // to check if amount is number or not (NaN => Not a number)
+    if(isNaN(numberDepositAmount) || numberDepositAmount<=0)
+        console.log("Invalid deposit amount, try again.");
+    
 
     
 };
