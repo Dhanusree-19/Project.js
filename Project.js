@@ -10,6 +10,7 @@ const prompt = require("prompt-sync")();
 // 'prompt-sync' is imported so we can ask the user for input in the command line
 
 const deposit = () => {
+    while(true){
     // program will ask this question in the terminal:
     const depositAmount = prompt("Enter a deposit amount: "); 
     
@@ -19,11 +20,14 @@ const deposit = () => {
     // to check if amount is number or not (NaN => Not a number)
     if(isNaN(numberDepositAmount) || numberDepositAmount<=0)
         console.log("Invalid deposit amount, try again.");
-    
+    else
+        return numberDepositAmount;
 
+    }
     
 };
 
-deposit();
+const depositAmount=deposit();
+console.log(depositAmount);
 
 
